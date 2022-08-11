@@ -38,8 +38,8 @@ UserSchema.methods.createToken = function () {
 };
 
 UserSchema.methods.comparePassword = async function (currentPassword) {
-  const isMatch = await bcrypt.compare(currentPassword, this.password);
-  return isMatch;
+  return  await bcrypt.compare(currentPassword, this.password);
+  
 };
 
 module.exports = mongoose.model("User", UserSchema);
